@@ -1,30 +1,30 @@
 Arguments: 
-  D:\nodejs\node.exe D:\yarn\bin\yarn.js add @webpack/cli
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.16.0/libexec/bin/yarn.js add @songbb/method-inject
 
 PATH: 
-  C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\Git\cmd;D:\nodejs\;C:\ProgramData\chocolatey\bin;D:\yarn\bin\;C:\Users\wb.songbingbing\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\wb.songbingbing\AppData\Local\Programs\Python\Python39\;C:\Users\wb.songbingbing\AppData\Local\Microsoft\WindowsApps;;D:\vscode\Microsoft VS Code\bin;C:\Users\wb.songbingbing\AppData\Roaming\npm;C:\Program Files (x86)\Egret\Egret Wing 3\bin;C:\Users\wb.songbingbing\AppData\Local\Yarn\bin
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
 
 Yarn version: 
-  1.22.5
+  1.16.0
 
 Node version: 
-  12.18.3
+  14.16.0
 
 Platform: 
-  win32 x64
+  darwin x64
 
 Trace: 
-  Error: http://uxnexus.nie.netease.com/nexus/content/groups/npm-all/@webpack%2fcli: Not found
-      at Request.params.callback [as _callback] (D:\yarn\lib\cli.js:66097:18)
-      at Request.self.callback (D:\yarn\lib\cli.js:140749:22)
+  Error: https://registry.npm.taobao.org/@songbb%2fmethod-inject: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:66091:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:129590:22)
       at Request.emit (events.js:315:20)
-      at Request.<anonymous> (D:\yarn\lib\cli.js:141721:10)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:130562:10)
       at Request.emit (events.js:315:20)
-      at IncomingMessage.<anonymous> (D:\yarn\lib\cli.js:141643:12)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:130484:12)
       at Object.onceWrapper (events.js:421:28)
       at IncomingMessage.emit (events.js:327:22)
-      at endReadableNT (_stream_readable.js:1220:12)
-      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+      at endReadableNT (internal/streams/readable.js:1327:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
 
 npm manifest: 
   {
@@ -34,18 +34,23 @@ npm manifest:
     "main": "index.js",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "dev": "node bin/dev-server"
+      "start": "webpack serve --open"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
       "@babel/core": "^7.13.15",
+      "@babel/plugin-transform-runtime": "^7.13.15",
       "@babel/preset-env": "^7.13.15",
+      "@babel/preset-react": "^7.13.13",
+      "@babel/runtime": "^7.13.10",
       "babel-loader": "^8.2.2",
       "html-webpack-plugin": "^5.3.1",
       "react": "^17.0.2",
       "react-dom": "^17.0.2",
+      "react-router-dom": "^5.2.0",
       "webpack": "^5.32.0",
+      "webpack-cli": "^4.6.0",
       "webpack-dev-server": "^3.11.2"
     }
   }
@@ -100,7 +105,7 @@ Lockfile:
       jsesc "^2.5.1"
       source-map "^0.5.0"
   
-  "@babel/helper-annotate-as-pure@^7.12.13":
+  "@babel/helper-annotate-as-pure@^7.10.4", "@babel/helper-annotate-as-pure@^7.12.13":
     version "7.12.13"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/@babel/helper-annotate-as-pure/-/helper-annotate-as-pure-7.12.13.tgz#0f58e86dfc4bb3b1fcd7db806570e177d439b6ab"
     integrity sha1-D1jobfxLs7H819uAZXDhd9Q5tqs=
@@ -465,6 +470,13 @@ Lockfile:
     dependencies:
       "@babel/helper-plugin-utils" "^7.8.0"
   
+  "@babel/plugin-syntax-jsx@^7.12.13":
+    version "7.12.13"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/@babel/plugin-syntax-jsx/-/plugin-syntax-jsx-7.12.13.tgz#044fb81ebad6698fe62c478875575bcbb9b70f15"
+    integrity sha1-BE+4HrrWaY/mLEeIdVdby7m3DxU=
+    dependencies:
+      "@babel/helper-plugin-utils" "^7.12.13"
+  
   "@babel/plugin-syntax-logical-assignment-operators@^7.10.4":
     version "7.10.4"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/@babel/plugin-syntax-logical-assignment-operators/-/plugin-syntax-logical-assignment-operators-7.10.4.tgz#ca91ef46303530448b906652bac2e9fe9941f699"
@@ -697,6 +709,39 @@ Lockfile:
     dependencies:
       "@babel/helper-plugin-utils" "^7.12.13"
   
+  "@babel/plugin-transform-react-display-name@^7.12.13":
+    version "7.12.13"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/@babel/plugin-transform-react-display-name/-/plugin-transform-react-display-name-7.12.13.tgz#c28effd771b276f4647411c9733dbb2d2da954bd"
+    integrity sha1-wo7/13GydvRkdBHJcz27LS2pVL0=
+    dependencies:
+      "@babel/helper-plugin-utils" "^7.12.13"
+  
+  "@babel/plugin-transform-react-jsx-development@^7.12.17":
+    version "7.12.17"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/@babel/plugin-transform-react-jsx-development/-/plugin-transform-react-jsx-development-7.12.17.tgz#f510c0fa7cd7234153539f9a362ced41a5ca1447"
+    integrity sha1-9RDA+nzXI0FTU5+aNiztQaXKFEc=
+    dependencies:
+      "@babel/plugin-transform-react-jsx" "^7.12.17"
+  
+  "@babel/plugin-transform-react-jsx@^7.12.17", "@babel/plugin-transform-react-jsx@^7.13.12":
+    version "7.13.12"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.13.12.tgz#1df5dfaf0f4b784b43e96da6f28d630e775f68b3"
+    integrity sha1-HfXfrw9LeEtD6W2m8o1jDndfaLM=
+    dependencies:
+      "@babel/helper-annotate-as-pure" "^7.12.13"
+      "@babel/helper-module-imports" "^7.13.12"
+      "@babel/helper-plugin-utils" "^7.13.0"
+      "@babel/plugin-syntax-jsx" "^7.12.13"
+      "@babel/types" "^7.13.12"
+  
+  "@babel/plugin-transform-react-pure-annotations@^7.12.1":
+    version "7.12.1"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/@babel/plugin-transform-react-pure-annotations/-/plugin-transform-react-pure-annotations-7.12.1.tgz#05d46f0ab4d1339ac59adf20a1462c91b37a1a42"
+    integrity sha1-BdRvCrTRM5rFmt8goUYskbN6GkI=
+    dependencies:
+      "@babel/helper-annotate-as-pure" "^7.10.4"
+      "@babel/helper-plugin-utils" "^7.10.4"
+  
   "@babel/plugin-transform-regenerator@^7.13.15":
     version "7.13.15"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/@babel/plugin-transform-regenerator/-/plugin-transform-regenerator-7.13.15.tgz#e5eb28945bf8b6563e7f818945f966a8d2997f39"
@@ -710,6 +755,18 @@ Lockfile:
     integrity sha1-fZmI1PBuD+aX6h2YAxiKoYtHJpU=
     dependencies:
       "@babel/helper-plugin-utils" "^7.12.13"
+  
+  "@babel/plugin-transform-runtime@^7.13.15":
+    version "7.13.15"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/@babel/plugin-transform-runtime/-/plugin-transform-runtime-7.13.15.tgz#2eddf585dd066b84102517e10a577f24f76a9cd7"
+    integrity sha1-Lt31hd0Ga4QQJRfhCld/JPdqnNc=
+    dependencies:
+      "@babel/helper-module-imports" "^7.13.12"
+      "@babel/helper-plugin-utils" "^7.13.0"
+      babel-plugin-polyfill-corejs2 "^0.2.0"
+      babel-plugin-polyfill-corejs3 "^0.2.0"
+      babel-plugin-polyfill-regenerator "^0.2.0"
+      semver "^6.3.0"
   
   "@babel/plugin-transform-shorthand-properties@^7.12.13":
     version "7.12.13"
@@ -848,7 +905,19 @@ Lockfile:
       "@babel/types" "^7.4.4"
       esutils "^2.0.2"
   
-  "@babel/runtime@^7.8.4":
+  "@babel/preset-react@^7.13.13":
+    version "7.13.13"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/@babel/preset-react/-/preset-react-7.13.13.tgz#fa6895a96c50763fe693f9148568458d5a839761"
+    integrity sha1-+miVqWxQdj/mk/kUhWhFjVqDl2E=
+    dependencies:
+      "@babel/helper-plugin-utils" "^7.13.0"
+      "@babel/helper-validator-option" "^7.12.17"
+      "@babel/plugin-transform-react-display-name" "^7.12.13"
+      "@babel/plugin-transform-react-jsx" "^7.13.12"
+      "@babel/plugin-transform-react-jsx-development" "^7.12.17"
+      "@babel/plugin-transform-react-pure-annotations" "^7.12.1"
+  
+  "@babel/runtime@^7.1.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.13.10", "@babel/runtime@^7.8.4":
     version "7.13.10"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/@babel/runtime/-/runtime-7.13.10.tgz#47d42a57b6095f4468da440388fdbad8bebf0d7d"
     integrity sha1-R9QqV7YJX0Ro2kQDiP262L6/DX0=
@@ -886,6 +955,11 @@ Lockfile:
       "@babel/helper-validator-identifier" "^7.12.11"
       lodash "^4.17.19"
       to-fast-properties "^2.0.0"
+  
+  "@discoveryjs/json-ext@^0.5.0":
+    version "0.5.2"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/@discoveryjs/json-ext/-/json-ext-0.5.2.tgz#8f03a22a04de437254e8ce8cc84ba39689288752"
+    integrity sha1-jwOiKgTeQ3JU6M6MyEujlokoh1I=
   
   "@types/eslint-scope@^3.7.0":
     version "3.7.0"
@@ -1062,6 +1136,23 @@ Lockfile:
       "@webassemblyjs/ast" "1.11.0"
       "@xtuc/long" "4.2.2"
   
+  "@webpack-cli/configtest@^1.0.2":
+    version "1.0.2"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/@webpack-cli/configtest/-/configtest-1.0.2.tgz#2a20812bfb3a2ebb0b27ee26a52eeb3e3f000836"
+    integrity sha1-KiCBK/s6LrsLJ+4mpS7rPj8ACDY=
+  
+  "@webpack-cli/info@^1.2.3":
+    version "1.2.3"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/@webpack-cli/info/-/info-1.2.3.tgz#ef819d10ace2976b6d134c7c823a3e79ee31a92c"
+    integrity sha1-74GdEKzil2ttE0x8gjo+ee4xqSw=
+    dependencies:
+      envinfo "^7.7.3"
+  
+  "@webpack-cli/serve@^1.3.1":
+    version "1.3.1"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/@webpack-cli/serve/-/serve-1.3.1.tgz#911d1b3ff4a843304b9c3bacf67bb34672418441"
+    integrity sha1-kR0bP/SoQzBLnDus9nuzRnJBhEE=
+  
   "@xtuc/ieee754@^1.2.0":
     version "1.2.0"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"
@@ -1109,6 +1200,11 @@ Lockfile:
     version "3.2.4"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/ansi-colors/-/ansi-colors-3.2.4.tgz#e3a3da4bfbae6c86a9c285625de124a234026fbf"
     integrity sha1-46PaS/uubIapwoViXeEkojQCb78=
+  
+  ansi-colors@^4.1.1:
+    version "4.1.1"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/ansi-colors/-/ansi-colors-4.1.1.tgz#cbb9ae256bf750af1eab344f229aa27fe94ba348"
+    integrity sha1-y7muJWv3UK8eqzRPIpqif+lLo0g=
   
   ansi-html@0.0.7:
     version "0.0.7"
@@ -1478,6 +1574,15 @@ Lockfile:
       strip-ansi "^5.2.0"
       wrap-ansi "^5.1.0"
   
+  clone-deep@^4.0.1:
+    version "4.0.1"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/clone-deep/-/clone-deep-4.0.1.tgz#c19fd9bdbbf85942b4fd979c84dcf7d5f07c2387"
+    integrity sha1-wZ/Zvbv4WUK0/ZechNz31fB8I4c=
+    dependencies:
+      is-plain-object "^2.0.4"
+      kind-of "^6.0.2"
+      shallow-clone "^3.0.0"
+  
   collection-visit@^1.0.0:
     version "1.0.0"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/collection-visit/-/collection-visit-1.0.0.tgz#4bc0373c164bc3291b4d368c829cf1a80a59dca0"
@@ -1498,7 +1603,7 @@ Lockfile:
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/color-name/-/color-name-1.1.3.tgz#a7d0558bd89c42f795dd42328f740831ca53bc25"
     integrity sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=
   
-  colorette@^1.2.2:
+  colorette@^1.2.1, colorette@^1.2.2:
     version "1.2.2"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/colorette/-/colorette-1.2.2.tgz#cbcc79d5e99caea2dbf10eb3a26fd8b3e6acfa94"
     integrity sha1-y8x51emcrqLb8Q6zom/Ys+as+pQ=
@@ -1512,6 +1617,11 @@ Lockfile:
     version "4.1.1"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/commander/-/commander-4.1.1.tgz#9fd602bd936294e9e9ef46a3f4d6964044b18068"
     integrity sha1-n9YCvZNilOnp70aj9NaWQESxgGg=
+  
+  commander@^7.0.0:
+    version "7.2.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/commander/-/commander-7.2.0.tgz#a36cb57d0b501ce108e4d20559a150a391d97ab7"
+    integrity sha1-o2y1fQtQHOEI5NIFWaFQo5HZerc=
   
   commondir@^1.0.1:
     version "1.0.1"
@@ -1610,6 +1720,15 @@ Lockfile:
       semver "^5.5.0"
       shebang-command "^1.2.0"
       which "^1.2.9"
+  
+  cross-spawn@^7.0.3:
+    version "7.0.3"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
+    integrity sha1-9zqFudXUHQRVUcF34ogtSshXKKY=
+    dependencies:
+      path-key "^3.1.0"
+      shebang-command "^2.0.0"
+      which "^2.0.1"
   
   css-select@^2.0.2:
     version "2.1.0"
@@ -1842,6 +1961,13 @@ Lockfile:
       graceful-fs "^4.2.4"
       tapable "^2.2.0"
   
+  enquirer@^2.3.6:
+    version "2.3.6"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/enquirer/-/enquirer-2.3.6.tgz#2a7fe5dd634a1e4125a975ec994ff5456dc3734d"
+    integrity sha1-Kn/l3WNKHkElqXXsmU/1RW3Dc00=
+    dependencies:
+      ansi-colors "^4.1.1"
+  
   entities@^1.1.1:
     version "1.1.2"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/entities/-/entities-1.1.2.tgz#bdfa735299664dfafd34529ed4f8522a275fea56"
@@ -1851,6 +1977,11 @@ Lockfile:
     version "2.2.0"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/entities/-/entities-2.2.0.tgz#098dc90ebb83d8dffa089d55256b351d34c4da55"
     integrity sha1-CY3JDruD2N/6CJ1VJWs1HTTE2lU=
+  
+  envinfo@^7.7.3:
+    version "7.8.1"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/envinfo/-/envinfo-7.8.1.tgz#06377e3e5f4d379fea7ac592d5ad8927e0c4d475"
+    integrity sha1-Bjd+Pl9NN5/qesWS1a2JJ+DE1HU=
   
   errno@^0.1.3:
     version "0.1.8"
@@ -1944,6 +2075,21 @@ Lockfile:
       signal-exit "^3.0.0"
       strip-eof "^1.0.0"
   
+  execa@^5.0.0:
+    version "5.0.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/execa/-/execa-5.0.0.tgz#4029b0007998a841fbd1032e5f4de86a3c1e3376"
+    integrity sha1-QCmwAHmYqEH70QMuX03oajweM3Y=
+    dependencies:
+      cross-spawn "^7.0.3"
+      get-stream "^6.0.0"
+      human-signals "^2.1.0"
+      is-stream "^2.0.0"
+      merge-stream "^2.0.0"
+      npm-run-path "^4.0.1"
+      onetime "^5.1.2"
+      signal-exit "^3.0.3"
+      strip-final-newline "^2.0.0"
+  
   expand-brackets@^2.1.4:
     version "2.1.4"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/expand-brackets/-/expand-brackets-2.1.4.tgz#b77735e315ce30f6b6eff0f83b04151a22449622"
@@ -2031,6 +2177,11 @@ Lockfile:
     version "2.1.0"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/fast-json-stable-stringify/-/fast-json-stable-stringify-2.1.0.tgz#874bf69c6f404c2b5d99c481341399fd55892633"
     integrity sha1-h0v2nG9ATCtdmcSBNBOZ/VWJJjM=
+  
+  fastest-levenshtein@^1.0.12:
+    version "1.0.12"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/fastest-levenshtein/-/fastest-levenshtein-1.0.12.tgz#9990f7d3a88cc5a9ffd1f1745745251700d497e2"
+    integrity sha1-mZD306iMxan/0fF0V0UlFwDUl+I=
   
   faye-websocket@^0.11.3:
     version "0.11.3"
@@ -2162,6 +2313,11 @@ Lockfile:
     dependencies:
       pump "^3.0.0"
   
+  get-stream@^6.0.0:
+    version "6.0.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/get-stream/-/get-stream-6.0.0.tgz#3e0012cb6827319da2706e601a1583e8629a6718"
+    integrity sha1-PgASy2gnMZ2icG5gGhWD6GKaZxg=
+  
   get-value@^2.0.3, get-value@^2.0.6:
     version "2.0.6"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/get-value/-/get-value-2.0.6.tgz#dc15ca1c672387ca76bd37ac0a395ba2042a2c28"
@@ -2276,6 +2432,25 @@ Lockfile:
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
     integrity sha1-hK5l+n6vsWX922FWauFLrwVmTw8=
   
+  history@^4.9.0:
+    version "4.10.1"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/history/-/history-4.10.1.tgz#33371a65e3a83b267434e2b3f3b1b4c58aad4cf3"
+    integrity sha1-MzcaZeOoOyZ0NOKz87G0xYqtTPM=
+    dependencies:
+      "@babel/runtime" "^7.1.2"
+      loose-envify "^1.2.0"
+      resolve-pathname "^3.0.0"
+      tiny-invariant "^1.0.2"
+      tiny-warning "^1.0.0"
+      value-equal "^1.0.1"
+  
+  hoist-non-react-statics@^3.1.0:
+    version "3.3.2"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
+    integrity sha1-7OCsr3HWLClpwuxZ/v9CpLGoW0U=
+    dependencies:
+      react-is "^16.7.0"
+  
   hpack.js@^2.1.6:
     version "2.1.6"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/hpack.js/-/hpack.js-2.1.6.tgz#87774c0949e513f42e84575b3c45681fade2a0b2"
@@ -2388,6 +2563,11 @@ Lockfile:
       follow-redirects "^1.0.0"
       requires-port "^1.0.0"
   
+  human-signals@^2.1.0:
+    version "2.1.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
+    integrity sha1-3JH8ukLk0G5Kuu0zs+ejwC9RTqA=
+  
   iconv-lite@0.4.24:
     version "0.4.24"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/iconv-lite/-/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
@@ -2402,6 +2582,14 @@ Lockfile:
     dependencies:
       pkg-dir "^3.0.0"
       resolve-cwd "^2.0.0"
+  
+  import-local@^3.0.2:
+    version "3.0.2"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/import-local/-/import-local-3.0.2.tgz#a8cfd0431d1de4a2199703d003e3e62364fa6db6"
+    integrity sha1-qM/QQx0d5KIZlwPQA+PmI2T6bbY=
+    dependencies:
+      pkg-dir "^4.2.0"
+      resolve-cwd "^3.0.0"
   
   inflight@^1.0.4:
     version "1.0.6"
@@ -2428,6 +2616,11 @@ Lockfile:
     dependencies:
       default-gateway "^4.2.0"
       ipaddr.js "^1.9.0"
+  
+  interpret@^2.2.0:
+    version "2.2.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/interpret/-/interpret-2.2.0.tgz#1a78a0b5965c40a5416d007ad6f50ad27c417df9"
+    integrity sha1-GnigtZZcQKVBbQB61vUK0nxBffk=
   
   ip-regex@^2.1.0:
     version "2.1.0"
@@ -2608,6 +2801,11 @@ Lockfile:
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
     integrity sha1-EtSj3U5o4Lec6428hBc66A2RykQ=
   
+  is-stream@^2.0.0:
+    version "2.0.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/is-stream/-/is-stream-2.0.0.tgz#bde9c32680d6fae04129d6ac9d921ce7815f78e3"
+    integrity sha1-venDJoDW+uBBKdasnZIc54FfeOM=
+  
   is-windows@^1.0.2:
     version "1.0.2"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/is-windows/-/is-windows-1.0.2.tgz#d1850eb9791ecd18e6182ce12a30f396634bb19d"
@@ -2617,6 +2815,11 @@ Lockfile:
     version "1.1.0"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/is-wsl/-/is-wsl-1.1.0.tgz#1f16e4aa22b04d1336b66188a66af3c600c3a66d"
     integrity sha1-HxbkqiKwTRM2tmGIpmrzxgDDpm0=
+  
+  isarray@0.0.1:
+    version "0.0.1"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
+    integrity sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=
   
   isarray@1.0.0, isarray@~1.0.0:
     version "1.0.0"
@@ -2766,7 +2969,7 @@ Lockfile:
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/loglevel/-/loglevel-1.7.1.tgz#005fde2f5e6e47068f935ff28573e125ef72f197"
     integrity sha1-AF/eL15uRwaPk1/yhXPhJe9y8Zc=
   
-  loose-envify@^1.1.0:
+  loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3.1, loose-envify@^1.4.0:
     version "1.4.0"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
     integrity sha1-ce5R+nvkyuwaY4OffmgtgTLTDK8=
@@ -2867,6 +3070,19 @@ Lockfile:
     version "2.5.2"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/mime/-/mime-2.5.2.tgz#6e3dc6cc2b9510643830e5f19d5cb753da5eeabe"
     integrity sha1-bj3GzCuVEGQ4MOXxnVy3U9pe6r4=
+  
+  mimic-fn@^2.1.0:
+    version "2.1.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/mimic-fn/-/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
+    integrity sha1-ftLCzMyvhNP/y3pptXcR/CCDQBs=
+  
+  mini-create-react-context@^0.4.0:
+    version "0.4.1"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/mini-create-react-context/-/mini-create-react-context-0.4.1.tgz#072171561bfdc922da08a60c2197a497cc2d1d5e"
+    integrity sha1-ByFxVhv9ySLaCKYMIZekl8wtHV4=
+    dependencies:
+      "@babel/runtime" "^7.12.1"
+      tiny-warning "^1.0.3"
   
   minimalistic-assert@^1.0.0:
     version "1.0.1"
@@ -3007,6 +3223,13 @@ Lockfile:
     dependencies:
       path-key "^2.0.0"
   
+  npm-run-path@^4.0.1:
+    version "4.0.1"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/npm-run-path/-/npm-run-path-4.0.1.tgz#b7ecd1e5ed53da8e37a55e1c2269e0b97ed748ea"
+    integrity sha1-t+zR5e1T2o43pV4cImnguX7XSOo=
+    dependencies:
+      path-key "^3.0.0"
+  
   nth-check@^1.0.2:
     version "1.0.2"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/nth-check/-/nth-check-1.0.2.tgz#b2bd295c37e3dd58a3bf0700376663ba4d9cf05c"
@@ -3088,6 +3311,13 @@ Lockfile:
     integrity sha1-WDsap3WWHUsROsF9nFC6753Xa9E=
     dependencies:
       wrappy "1"
+  
+  onetime@^5.1.2:
+    version "5.1.2"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/onetime/-/onetime-5.1.2.tgz#d0e96ebb56b07476df1dd9c4806e5237985ca45e"
+    integrity sha1-0Oluu1awdHbfHdnEgG5SN5hcpF4=
+    dependencies:
+      mimic-fn "^2.1.0"
   
   opn@^5.5.0:
     version "5.5.0"
@@ -3209,6 +3439,11 @@ Lockfile:
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/path-key/-/path-key-2.0.1.tgz#411cadb574c5a140d3a4b1910d40d80cc9f40b40"
     integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
   
+  path-key@^3.0.0, path-key@^3.1.0:
+    version "3.1.1"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/path-key/-/path-key-3.1.1.tgz#581f6ade658cbba65a0d3380de7753295054f375"
+    integrity sha1-WB9q3mWMu6ZaDTOA3ndTKVBU83U=
+  
   path-parse@^1.0.6:
     version "1.0.6"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
@@ -3218,6 +3453,13 @@ Lockfile:
     version "0.1.7"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
     integrity sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
+  
+  path-to-regexp@^1.7.0:
+    version "1.8.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/path-to-regexp/-/path-to-regexp-1.8.0.tgz#887b3ba9d84393e87a0a0b9f4cb756198b53548a"
+    integrity sha1-iHs7qdhDk+h6CgufTLdWGYtTVIo=
+    dependencies:
+      isarray "0.0.1"
   
   pify@^2.0.0:
     version "2.3.0"
@@ -3248,7 +3490,7 @@ Lockfile:
     dependencies:
       find-up "^3.0.0"
   
-  pkg-dir@^4.1.0:
+  pkg-dir@^4.1.0, pkg-dir@^4.2.0:
     version "4.2.0"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/pkg-dir/-/pkg-dir-4.2.0.tgz#f099133df7ede422e81d1d8448270eeb3e4261f3"
     integrity sha1-8JkTPfft5CLoHR2ESCcO6z5CYfM=
@@ -3281,6 +3523,15 @@ Lockfile:
     version "2.0.1"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
     integrity sha1-eCDZsWEgzFXKmud5JoCufbptf+I=
+  
+  prop-types@^15.6.2:
+    version "15.7.2"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
+    integrity sha1-UsQedbjIfnK52TYOAga5ncv/psU=
+    dependencies:
+      loose-envify "^1.4.0"
+      object-assign "^4.1.1"
+      react-is "^16.8.1"
   
   proxy-addr@~2.0.5:
     version "2.0.6"
@@ -3359,6 +3610,40 @@ Lockfile:
       object-assign "^4.1.1"
       scheduler "^0.20.2"
   
+  react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1:
+    version "16.13.1"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
+    integrity sha1-eJcppNw23imZ3BVt1sHZwYzqVqQ=
+  
+  react-router-dom@^5.2.0:
+    version "5.2.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/react-router-dom/-/react-router-dom-5.2.0.tgz#9e65a4d0c45e13289e66c7b17c7e175d0ea15662"
+    integrity sha1-nmWk0MReEyieZsexfH4XXQ6hVmI=
+    dependencies:
+      "@babel/runtime" "^7.1.2"
+      history "^4.9.0"
+      loose-envify "^1.3.1"
+      prop-types "^15.6.2"
+      react-router "5.2.0"
+      tiny-invariant "^1.0.2"
+      tiny-warning "^1.0.0"
+  
+  react-router@5.2.0:
+    version "5.2.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/react-router/-/react-router-5.2.0.tgz#424e75641ca8747fbf76e5ecca69781aa37ea293"
+    integrity sha1-Qk51ZByodH+/duXsyml4GqN+opM=
+    dependencies:
+      "@babel/runtime" "^7.1.2"
+      history "^4.9.0"
+      hoist-non-react-statics "^3.1.0"
+      loose-envify "^1.3.1"
+      mini-create-react-context "^0.4.0"
+      path-to-regexp "^1.7.0"
+      prop-types "^15.6.2"
+      react-is "^16.6.0"
+      tiny-invariant "^1.0.2"
+      tiny-warning "^1.0.0"
+  
   react@^17.0.2:
     version "17.0.2"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
@@ -3397,6 +3682,13 @@ Lockfile:
       graceful-fs "^4.1.11"
       micromatch "^3.1.10"
       readable-stream "^2.0.2"
+  
+  rechoir@^0.7.0:
+    version "0.7.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/rechoir/-/rechoir-0.7.0.tgz#32650fd52c21ab252aa5d65b19310441c7e03aca"
+    integrity sha1-MmUP1SwhqyUqpdZbGTEEQcfgOso=
+    dependencies:
+      resolve "^1.9.0"
   
   regenerate-unicode-properties@^8.2.0:
     version "8.2.0"
@@ -3515,17 +3807,34 @@ Lockfile:
     dependencies:
       resolve-from "^3.0.0"
   
+  resolve-cwd@^3.0.0:
+    version "3.0.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/resolve-cwd/-/resolve-cwd-3.0.0.tgz#0f0075f1bb2544766cf73ba6a6e2adfebcb13f2d"
+    integrity sha1-DwB18bslRHZs9zumpuKt/ryxPy0=
+    dependencies:
+      resolve-from "^5.0.0"
+  
   resolve-from@^3.0.0:
     version "3.0.0"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/resolve-from/-/resolve-from-3.0.0.tgz#b22c7af7d9d6881bc8b6e653335eebcb0a188748"
     integrity sha1-six699nWiBvItuZTM17rywoYh0g=
+  
+  resolve-from@^5.0.0:
+    version "5.0.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/resolve-from/-/resolve-from-5.0.0.tgz#c35225843df8f776df21c57557bc087e9dfdfc69"
+    integrity sha1-w1IlhD3493bfIcV1V7wIfp39/Gk=
+  
+  resolve-pathname@^3.0.0:
+    version "3.0.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/resolve-pathname/-/resolve-pathname-3.0.0.tgz#99d02224d3cf263689becbb393bc560313025dcd"
+    integrity sha1-mdAiJNPPJjaJvsuzk7xWAxMCXc0=
   
   resolve-url@^0.2.1:
     version "0.2.1"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
     integrity sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo=
   
-  resolve@^1.14.2:
+  resolve@^1.14.2, resolve@^1.9.0:
     version "1.20.0"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/resolve/-/resolve-1.20.0.tgz#629a013fb3f70755d6f0b7935cc1c2c5378b1975"
     integrity sha1-YpoBP7P3B1XW8LeTXMHCxTeLGXU=
@@ -3708,6 +4017,13 @@ Lockfile:
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/setprototypeof/-/setprototypeof-1.1.1.tgz#7e95acb24aa92f5885e0abef5ba131330d4ae683"
     integrity sha1-fpWsskqpL1iF4KvvW6ExMw1K5oM=
   
+  shallow-clone@^3.0.0:
+    version "3.0.1"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/shallow-clone/-/shallow-clone-3.0.1.tgz#8f2981ad92531f55035b01fb230769a40e02efa3"
+    integrity sha1-jymBrZJTH1UDWwH7IwdppA4C76M=
+    dependencies:
+      kind-of "^6.0.2"
+  
   shebang-command@^1.2.0:
     version "1.2.0"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/shebang-command/-/shebang-command-1.2.0.tgz#44aac65b695b03398968c39f363fee5deafdf1ea"
@@ -3715,12 +4031,24 @@ Lockfile:
     dependencies:
       shebang-regex "^1.0.0"
   
+  shebang-command@^2.0.0:
+    version "2.0.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/shebang-command/-/shebang-command-2.0.0.tgz#ccd0af4f8835fbdc265b82461aaf0c36663f34ea"
+    integrity sha1-zNCvT4g1+9wmW4JGGq8MNmY/NOo=
+    dependencies:
+      shebang-regex "^3.0.0"
+  
   shebang-regex@^1.0.0:
     version "1.0.0"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/shebang-regex/-/shebang-regex-1.0.0.tgz#da42f49740c0b42db2ca9728571cb190c98efea3"
     integrity sha1-2kL0l0DAtC2yypcoVxyxkMmO/qM=
   
-  signal-exit@^3.0.0:
+  shebang-regex@^3.0.0:
+    version "3.0.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
+    integrity sha1-rhbxZE2HPsrYQ7AwexQzYtTEIXI=
+  
+  signal-exit@^3.0.0, signal-exit@^3.0.3:
     version "3.0.3"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/signal-exit/-/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
     integrity sha1-oUEMLt2PB3sItOJTyOrPyvBXRhw=
@@ -3905,6 +4233,11 @@ Lockfile:
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/strip-eof/-/strip-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
     integrity sha1-u0P/VZim6wXYm1n80SnJgzE2Br8=
   
+  strip-final-newline@^2.0.0:
+    version "2.0.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/strip-final-newline/-/strip-final-newline-2.0.0.tgz#89b852fb2fcbe936f6f4b3187afb0a12c1ab58ad"
+    integrity sha1-ibhS+y/L6Tb29LMYevsKEsGrWK0=
+  
   supports-color@^5.3.0:
     version "5.5.0"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/supports-color/-/supports-color-5.5.0.tgz#e2e69a44ac8772f78a1ec0b35b689df6530efc8f"
@@ -3965,6 +4298,16 @@ Lockfile:
     version "1.1.0"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/thunky/-/thunky-1.1.0.tgz#5abaf714a9405db0504732bbccd2cedd9ef9537d"
     integrity sha1-Wrr3FKlAXbBQRzK7zNLO3Z75U30=
+  
+  tiny-invariant@^1.0.2:
+    version "1.1.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/tiny-invariant/-/tiny-invariant-1.1.0.tgz#634c5f8efdc27714b7f386c35e6760991d230875"
+    integrity sha1-Y0xfjv3CdxS384bDXmdgmR0jCHU=
+  
+  tiny-warning@^1.0.0, tiny-warning@^1.0.3:
+    version "1.0.3"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/tiny-warning/-/tiny-warning-1.0.3.tgz#94a30db453df4c643d0fd566060d60a875d84754"
+    integrity sha1-lKMNtFPfTGQ9D9VmBg1gqHXYR1Q=
   
   to-fast-properties@^2.0.0:
     version "2.0.0"
@@ -4118,6 +4461,16 @@ Lockfile:
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
     integrity sha1-sj5DWK+oogL+ehAK8fX4g/AgB+4=
   
+  v8-compile-cache@^2.2.0:
+    version "2.3.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
+    integrity sha1-LeGWGMZtwkfc+2+ZM4A12CRaLO4=
+  
+  value-equal@^1.0.1:
+    version "1.0.1"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/value-equal/-/value-equal-1.0.1.tgz#1e0b794c734c5c0cade179c437d356d931a34d6c"
+    integrity sha1-Hgt5THNMXAyt4XnEN9NW2TGjTWw=
+  
   vary@~1.1.2:
     version "1.1.2"
     resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
@@ -4137,6 +4490,26 @@ Lockfile:
     integrity sha1-wdjRSTFtPqhShIiVy2oL/oh7h98=
     dependencies:
       minimalistic-assert "^1.0.0"
+  
+  webpack-cli@^4.6.0:
+    version "4.6.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/webpack-cli/-/webpack-cli-4.6.0.tgz#27ae86bfaec0cf393fcfd58abdc5a229ad32fd16"
+    integrity sha1-J66Gv67Azzk/z9WKvcWiKa0y/RY=
+    dependencies:
+      "@discoveryjs/json-ext" "^0.5.0"
+      "@webpack-cli/configtest" "^1.0.2"
+      "@webpack-cli/info" "^1.2.3"
+      "@webpack-cli/serve" "^1.3.1"
+      colorette "^1.2.1"
+      commander "^7.0.0"
+      enquirer "^2.3.6"
+      execa "^5.0.0"
+      fastest-levenshtein "^1.0.12"
+      import-local "^3.0.2"
+      interpret "^2.2.0"
+      rechoir "^0.7.0"
+      v8-compile-cache "^2.2.0"
+      webpack-merge "^5.7.3"
   
   webpack-dev-middleware@^3.7.2:
     version "3.7.3"
@@ -4195,6 +4568,14 @@ Lockfile:
     dependencies:
       ansi-colors "^3.0.0"
       uuid "^3.3.2"
+  
+  webpack-merge@^5.7.3:
+    version "5.7.3"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/webpack-merge/-/webpack-merge-5.7.3.tgz#2a0754e1877a25a8bbab3d2475ca70a052708213"
+    integrity sha1-KgdU4Yd6Jai7qz0kdcpwoFJwghM=
+    dependencies:
+      clone-deep "^4.0.1"
+      wildcard "^2.0.0"
   
   webpack-sources@^2.1.1:
     version "2.2.0"
@@ -4258,6 +4639,18 @@ Lockfile:
     integrity sha1-pFBD1U9YBTFtqNYvn1CRjT2nCwo=
     dependencies:
       isexe "^2.0.0"
+  
+  which@^2.0.1:
+    version "2.0.2"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/which/-/which-2.0.2.tgz#7c6a8dd0a636a0327e10b59c9286eee93f3f51b1"
+    integrity sha1-fGqN0KY2oDJ+ELWckobu6T8/UbE=
+    dependencies:
+      isexe "^2.0.0"
+  
+  wildcard@^2.0.0:
+    version "2.0.0"
+    resolved "http://uxnexus.nie.netease.com/nexus/repository/npm-all/wildcard/-/wildcard-2.0.0.tgz#a77d20e5200c6faaac979e4b3aadc7b3dd7f8fec"
+    integrity sha1-p30g5SAMb6qsl55LOq3Hs91/j+w=
   
   wrap-ansi@^5.1.0:
     version "5.1.0"

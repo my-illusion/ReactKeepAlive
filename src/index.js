@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { injectAll } from 'methods_inject'
 
 import App from './App.jsx'
+
+injectAll()
 
 const render = () => {
     ReactDom.render(
