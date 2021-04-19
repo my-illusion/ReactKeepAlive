@@ -4,7 +4,7 @@ import { injectAll } from 'methods_inject'
 
 import App from './App.jsx'
 
-injectAll()
+// injectAll()
 
 const render = () => {
     ReactDom.render(

@@ -56,7 +56,7 @@ class CacheRoute extends Route {
                 ? children(childrenProps)
                 : children
               : component
-                ? React.createElement(WithRouterComponent, childrenProps)
+                ? React.createElement(WithRouterComponent,  v )
                 : render
                   ? render(childrenProps)
                   : null

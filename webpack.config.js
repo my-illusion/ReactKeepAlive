@@ -5,8 +5,9 @@ module.exports = {
     mode: 'development',
     entry: path.resolve(__dirname, './src/index.js'),
     output: {
+        publicPath: '/',
         path: path.resolve(__dirname, '../dist'), // 输出的路径
-        filename: 'bundle.js'  // 打包后文件
+        filename: '[name].bundle.js'  // 打包后文件
     },
     module: {
         rules: [
@@ -46,11 +47,12 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, './public/index.html'),
-　　　　 　　title: 'react-keepalive'
-　　　　 })
+　　　　 　　   title: 'react-keepalive'
+　　　　    }
+        )
     ],
     devServer: {
-        contentBase: path.resolve(__dirname, '../dist'),
+        contentBase: path.resolve(__dirname, '../dist/'),
         historyApiFallback: true, 
         hot: true
     }

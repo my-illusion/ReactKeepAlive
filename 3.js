@@ -16,6 +16,7 @@ export const handerReactComponent = (children, prop) =>
     : isFuntion(children)
       ? children(prop)
       : null
+      
 const UpdateComponent = memo(({children}) => children, () => true)
 
 const CacheKeepItem = memo(({cacheId, children, state, dispatch, lastState,load = () => {}, router = {}}) => {
