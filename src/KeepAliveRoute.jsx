@@ -3,7 +3,7 @@ import { Route, withRouter, matchPath } from 'react-router-dom'
 
 import RouterContext from './RouterContext'
 
-const UpdateComponent = React.memo(({ children }) => children, () => true)
+const UpdateComponent = React.memo(({ children }) => children, () => false)
 
 export const keepAliveRouteTag = Symbol("KeepAliveRoute") 
 
@@ -49,13 +49,13 @@ class KeepAliveRoute extends Route {
                         children = null;
                     }
                     
-                    const childreMemo = memoChildren(props, children, component, render)
-
+                    const childrenMemo = memoChildren(props, children, component, render)
+                    console.log(childrenMemo, '---')
                     return (
                         <div style={{ display: props.match ? 'block' : 'none' }} ref={this.containerRef}>
                             <UpdateComponent>
                                 {
-                                    childreMemo
+                                    childrenMemo
                                 }
                             </UpdateComponent>
                         </div>
