@@ -26,6 +26,7 @@ class KeepAliveRoute extends Route {
     }
 
     render() {
+        const { name } = this.props
         return (
         <RouterContext.Consumer>
             {
@@ -50,6 +51,10 @@ class KeepAliveRoute extends Route {
                     }
                     
                     const childrenMemo = memoChildren(props, children, component, render)
+
+                    if(!name || !context.include.includes(name)) {
+                        return props.match ? childrenMemo : null
+                    }
                 
                     return (
                         <div style={{ display: props.match ? 'block' : 'none' }} ref={this.containerRef}>

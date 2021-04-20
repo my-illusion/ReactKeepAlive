@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import KeepAliveRoute from './KeepAliveRoute'
 import KeepAliveSwitch from './KeepAliveSwitch'
+import RouterContext from './RouterContext'
 
 const A = () => {
     console.log('a update!!')
@@ -25,9 +26,11 @@ const C = () => {
 }
 
 const B = () => {
+    const { pushIntoInclude } = useContext(RouterContext)
     return (
         <div>
             B
+            <button onClick={() => pushIntoInclude("A")}>add A to cache</button>
             <Route
                 path="/b/c"
                 component={C}
@@ -49,8 +52,8 @@ export default () => {
             <Link to="/b">switch to b</Link> <br/>
             <Link to="/d/3">switch to d</Link> <br/>
             <Link to="/b/c">switch to b/c</Link>
-            <KeepAliveSwitch>
-                <KeepAliveRoute path="/a" component={A}/>
+            <KeepAliveSwitch include={[]}>
+                <KeepAliveRoute name="A" path="/a" component={A}/>
                 <Route path="/B" component={B} />
                 <Route path="/d/:id" component={D} />
             </KeepAliveSwitch>

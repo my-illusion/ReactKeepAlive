@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.16.0/libexec/bin/yarn.js add @songbb/method-inject
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.16.0/libexec/bin/yarn.js add @babel/plugin-proposal-class-properties -D
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
@@ -14,17 +14,17 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.npm.taobao.org/@songbb%2fmethod-inject: Not found
-      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:66091:18)
-      at Request.self.callback (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:129590:22)
-      at Request.emit (events.js:315:20)
-      at Request.<anonymous> (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:130562:10)
-      at Request.emit (events.js:315:20)
-      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:130484:12)
-      at Object.onceWrapper (events.js:421:28)
-      at IncomingMessage.emit (events.js:327:22)
-      at endReadableNT (internal/streams/readable.js:1327:12)
-      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+  Error: connect ENETUNREACH 42.186.120.43:80 - Local (0.0.0.0:57514)
+      at internalConnect (net.js:921:16)
+      at defaultTriggerAsyncIdScope (internal/async_hooks.js:430:12)
+      at emitLookup (net.js:1064:9)
+      at /usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:106726:28
+      at /usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:106635:13
+      at RawTask.module.exports.RawTask.call (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:82961:19)
+      at flush (/usr/local/Cellar/yarn/1.16.0/libexec/lib/cli.js:83043:29)
+      at processTicksAndRejections (internal/process/task_queues.js:75:11)
+      at runNextTicks (internal/process/task_queues.js:62:3)
+      at processImmediate (internal/timers.js:434:9)
 
 npm manifest: 
   {
@@ -44,8 +44,10 @@ npm manifest:
       "@babel/preset-env": "^7.13.15",
       "@babel/preset-react": "^7.13.13",
       "@babel/runtime": "^7.13.10",
+      "@songbb/method_inject": "0.0.1",
       "babel-loader": "^8.2.2",
       "html-webpack-plugin": "^5.3.1",
+      "methods_inject": "0.0.5",
       "react": "^17.0.2",
       "react-dom": "^17.0.2",
       "react-router-dom": "^5.2.0",

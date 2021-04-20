@@ -4,7 +4,50 @@ import { Switch, withRouter, matchPath } from 'react-router-dom'
 import RouterContext from './RouterContext'
 import { keepAliveRouteTag } from './KeepAliveRoute'
 
+// include 是为了实现类似于Vue的api 用来实现组件动态的缓存
 class KeepAliveSwitch extends Switch {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            include: props.include || []
+        }
+    }
+
+    // static getDerivedStateFromProps(nextProps, prevState){
+    //     console.log('hhh', nextProps, prevState)
+    //     if(nextProps.include !== prevState.include) {
+    //         return {
+    //             include: nextProps.include
+    //         }
+    //     }
+    //     return null
+    // }
+
+    pushIntoInclude = (name) => {
+        if(!name) return
+        const { include } = this.state
+        const isExist = include.findIndex(i => i === name)
+        if(isExist === -1) {
+            this.setState({
+                include: include.concat(name)
+            })
+        }
+    }
+
+    popOutInclude = (name) => {
+        if(!name) return
+        const { include } = this.state
+        const isExist = include.findIndex(i => i === name)
+        if(isExist !== -1) {
+            const result = include.concat()
+            result.splice(isExist, 1)
+            this.setState({
+                include: result
+            })
+        }
+    }
+
     render() {
         const location = this.props.location;
 
@@ -42,8 +85,15 @@ class KeepAliveSwitch extends Switch {
         const childrenRender =  match
             ? React.cloneElement(element, { location, computedMatch: match })
             : null;
+
         return (
-            <RouterContext.Provider value={{}}>
+            <RouterContext.Provider 
+                value={{
+                    pushIntoInclude: this.pushIntoInclude,
+                    popOutInclude: this.popOutInclude,
+                    include: this.state.include
+                }}
+            >
                 {
                     keepAliveRoute
                 }
