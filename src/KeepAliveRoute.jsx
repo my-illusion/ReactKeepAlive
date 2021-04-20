@@ -3,7 +3,7 @@ import { Route, withRouter, matchPath } from 'react-router-dom'
 
 import RouterContext from './RouterContext'
 
-const UpdateComponent = React.memo(({ children }) => children, () => false)
+const UpdateComponent = React.memo(({ children }) => children, () => true)
 
 export const keepAliveRouteTag = Symbol("KeepAliveRoute") 
 

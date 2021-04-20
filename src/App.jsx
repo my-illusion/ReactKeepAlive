@@ -1,13 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import KeepAliveRoute from './KeepAliveRoute'
 import KeepAliveSwitch from './KeepAliveSwitch'
 
 const A = () => {
     console.log('a update!!')
+    const [count, setCount] = useState(1)
     return (
         <div>
-            A
+            {count} -- 
+            <button onClick={() => setCount(c => ++c)}>click</button>
+            A11
             <input />
         </div>
     )
@@ -42,6 +45,10 @@ const D = (props) => {
 export default () => {
     return (
         <Router>
+            <Link to="/a">switch to a</Link> <br/>
+            <Link to="/b">switch to b</Link> <br/>
+            <Link to="/d/3">switch to d</Link> <br/>
+            <Link to="/b/c">switch to b/c</Link>
             <KeepAliveSwitch>
                 <KeepAliveRoute path="/a" component={A}/>
                 <Route path="/B" component={B} />
@@ -51,10 +58,6 @@ export default () => {
                 <Route path="/B" component={B} />
                 <Route path="/d/:id" component={D} />
             </Switch> */}
-            <Link to="/a">switch to a</Link> <br/>
-            <Link to="/b">switch to b</Link> <br/>
-            <Link to="/d/3">switch to d</Link> <br/>
-            <Link to="/b/c">switch to b/c</Link>
         </Router>
     )
 }
