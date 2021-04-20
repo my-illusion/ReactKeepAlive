@@ -50,7 +50,7 @@ class KeepAliveRoute extends Route {
                     }
                     
                     const childrenMemo = memoChildren(props, children, component, render)
-                    console.log(childrenMemo, '---')
+                
                     return (
                         <div style={{ display: props.match ? 'block' : 'none' }} ref={this.containerRef}>
                             <UpdateComponent>
